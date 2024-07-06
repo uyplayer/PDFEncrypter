@@ -102,6 +102,12 @@ void mainWindow::on_selectfiles_clicked() {
         model->clear();
         foreach(QString fileName, fileNames) {
             auto *item = new QStandardItem(fileName);
+            // if item is not pdf
+            if (!fileName.endsWith(".pdf")) {
+                msgBox->warning(this, "Warning", fileName + " is not a PDF file");
+                model->clear();
+                return ;
+            }
             item->setEditable(false);
             model->appendRow(item);
         }
