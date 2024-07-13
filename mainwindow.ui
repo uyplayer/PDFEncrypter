@@ -71,7 +71,7 @@
     <property name="geometry">
      <rect>
       <x>750</x>
-      <y>120</y>
+      <y>130</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -92,7 +92,7 @@
       <x>50</x>
       <y>90</y>
       <width>661</width>
-      <height>501</height>
+      <height>451</height>
      </rect>
     </property>
    </widget>
@@ -100,9 +100,9 @@
     <property name="geometry">
      <rect>
       <x>740</x>
-      <y>210</y>
+      <y>230</y>
       <width>201</width>
-      <height>351</height>
+      <height>301</height>
      </rect>
     </property>
     <property name="text">
@@ -113,13 +113,54 @@
     <property name="geometry">
      <rect>
       <x>730</x>
-      <y>180</y>
+      <y>200</y>
       <width>221</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
      <string>Encrypted PDF files output directory</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="outputdirectory">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>80</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>output directory</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="process_lebel">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>550</y>
+      <width>871</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

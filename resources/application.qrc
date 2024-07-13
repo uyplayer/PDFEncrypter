@@ -5,5 +5,6 @@
         <file>icon/zoomout.png</file>
         <file>icon/pdf.png</file>
         <file>icon/encryption.png</file>
+        <file>icon/Output.png</file>
     </qresource>
 </RCC>
