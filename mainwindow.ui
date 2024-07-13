@@ -64,7 +64,7 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>select files</string>
+     <string>Delect Files</string>
     </property>
    </widget>
    <widget class="QPushButton" name="encryption">
@@ -83,7 +83,7 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>encryption</string>
+     <string>Encryption</string>
     </property>
    </widget>
    <widget class="QListView" name="listView">
@@ -138,7 +138,7 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>output directory</string>
+     <string>Output Directory</string>
     </property>
    </widget>
    <widget class="QLabel" name="process_lebel">

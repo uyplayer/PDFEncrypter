@@ -137,8 +137,13 @@ void mainWindow::on_selectfiles_clicked() {
             model->appendRow(item);
         }
     }
-    ui->process_lebel->clear();
-    ui->process_lebel->setText(QString::number(model->rowCount()) + " PDF files Selected");
+    if (model->rowCount() == 0) {
+        ui->process_lebel->clear();
+        ui->process_lebel->setText("No PDF files selected");
+    } else {
+        ui->process_lebel->clear();
+        ui->process_lebel->setText(QString::number(model->rowCount()) + " PDF files Selected");
+    }
 }
 
 void mainWindow::on_outputdirectory_clicked() {
@@ -147,7 +152,9 @@ void mainWindow::on_outputdirectory_clicked() {
 
     outputDir = QFileDialog::getExistingDirectory(this,
                                                   tr("Encrypted PDF files output directory"), QDir::homePath());
-
+    if (outputDir.isEmpty()) {
+        return;
+    }
     ui->outputDirLabel->setText(outputDir);
     ui->label->show();
 
@@ -157,7 +164,6 @@ void mainWindow::on_outputdirectory_clicked() {
 
 
 void mainWindow::on_encryption_clicked() {
-
     ui->process_lebel->clear();
     if (ui->uuid->text().isEmpty()) {
         msgBox->warning(this, "Warning", "Please Input User's UUID");
@@ -231,12 +237,12 @@ void mainWindow::encryptPDFFiles(const QString &pdfFile) {
     for (int i = 0; i < numChunks; ++i) {
         threads.emplace_back(xorEncryptChunk, std::ref(chunks[i]), std::ref(key), i * chunkSize);
     }
-    for (auto &t : threads) {
+    for (auto &t: threads) {
         t.join();
     }
 
     QByteArray encryptedData;
-    for (const auto &chunk : chunks) {
+    for (const auto &chunk: chunks) {
         encryptedData.append(chunk);
     }
     std::string new_pdf = outputDir.toStdString() + "/" + QFileInfo(pdfFile).fileName().toStdString();
@@ -248,7 +254,3 @@ void mainWindow::encryptPDFFiles(const QString &pdfFile) {
     newFile.write(encryptedData);
     newFile.close();
 }
-
-
-
-
