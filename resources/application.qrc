@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/icon">
         <file>icon/app_books.png</file>
+        <file>icon/app_books.ico</file>
         <file>icon/zoomin.png</file>
         <file>icon/zoomout.png</file>
         <file>icon/pdf.png</file>

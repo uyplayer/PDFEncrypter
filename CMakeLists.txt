@@ -40,6 +40,7 @@ message(STATUS "Qt6 Widgets: ${Qt6Widgets_DIR}")
 
 set(QRC_SOURCE_FILE resources/application.qrc)
 qt_add_resources(QRC_FILES ${QRC_SOURCE_FILE})
+set(Icon resources/version.rc)
 
 find_package(fmt CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
@@ -48,6 +49,7 @@ set(SOURCES
         main.cpp
         mainwindow.cpp
         ${QRC_FILES}
+        ${Icon}
 )
 if(WIN32)
     if(CMAKE_BUILD_TYPE STREQUAL "Release")
