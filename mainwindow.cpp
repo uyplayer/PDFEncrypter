@@ -205,6 +205,7 @@ void xorEncryptChunk(QByteArray &chunk, const QByteArray &key, int chunkIndex) {
     int keySize = key.size();
     for (int i = 0; i < chunk.size(); ++i) {
         chunk[i] = chunk[i] ^ key[(i + chunkIndex) % keySize];
+
     }
 }
 
