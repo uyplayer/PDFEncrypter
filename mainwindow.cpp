@@ -224,7 +224,7 @@ void mainWindow::encryptPDFFiles(const QString &pdfFile) {
     QByteArray fileData = file.readAll();
     file.close();
 
-    QByteArray key = QCryptographicHash::hash(new_uuid.toUtf8(), QCryptographicHash::Sha256);
+    QByteArray key = QCryptographicHash::hash(new_uuid.toUtf8(), QCryptographicHash::Sha3_512);
 
     int chunkSize = 1024 * 1024;
     int numChunks = fileData.size() / chunkSize + (fileData.size() % chunkSize == 0 ? 0 : 1);

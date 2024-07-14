@@ -13,6 +13,7 @@ message(STATUS "System: ${CMAKE_SYSTEM_NAME}")
 
 
 # using vcpkg
+set(VCPKG_ROOT_DIR $ENV{VCPKG_ROOT_DIR})
 message(STATUS "VCPKG_ROOT_DIR: ${VCPKG_ROOT_DIR}")
 set(CMAKE_TOOLCHAIN_FILE "${VCPKG_ROOT_DIR}/scripts/buildsystems/vcpkg.cmake")
 

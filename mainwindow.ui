@@ -64,7 +64,7 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>Delect Files</string>
+     <string>Select Files</string>
     </property>
    </widget>
    <widget class="QPushButton" name="encryption">
