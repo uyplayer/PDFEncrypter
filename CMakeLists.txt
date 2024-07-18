@@ -27,7 +27,7 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
     # set(CMAKE_PREFIX_PATH "")
 elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
-    set(CMAKE_PREFIX_PATH "/Users/uyplayer/Qt/6.5.3/macos")
+    set(CMAKE_PREFIX_PATH "/Users/uyplayer/Qt/6.7.2/macos")
 endif()
 
 find_package(Qt6 REQUIRED COMPONENTS
