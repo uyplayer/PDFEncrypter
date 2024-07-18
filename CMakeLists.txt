@@ -3,7 +3,9 @@ project(PDFGlimpseManager)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zc:__cplusplus")
+endif()
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
@@ -25,7 +27,7 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
     # set(CMAKE_PREFIX_PATH "")
 elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
-    # set(CMAKE_PREFIX_PATH "/Users//Qt/6.5.3/macos")
+    set(CMAKE_PREFIX_PATH "/Users/uyplayer/Qt/6.5.3/macos")
 endif()
 
 find_package(Qt6 REQUIRED COMPONENTS
@@ -61,12 +63,14 @@ if(WIN32)
     endif()
 elseif(APPLE)
     message(STATUS "APPLE")
+    add_executable(${PROJECT_NAME} ${SOURCES})
 else()
     message(STATUS "LINUX")
+    add_executable(${PROJECT_NAME} ${SOURCES})
 endif()
 
 # 链接静态库
-target_link_libraries(PDFGlimpseManager
+target_link_libraries(${PROJECT_NAME}
         Qt6::Core
         Qt6::Gui
         Qt6::Widgets
