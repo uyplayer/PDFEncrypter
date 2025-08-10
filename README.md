@@ -1,4 +1,4 @@
 
 
- ## PDFGlimpseManager
-PDFGlimpseManager is a simple pdf encryption and decryption tool 
+ ## PDFEncrypter
+PDFEncrypter is a simple pdf encryption and decryption tool 
